@@ -1,9 +1,13 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
-  attr_accessible :email, :password, :password_confirmation
+  has_many :trips
+  has_many :items
 
-  validates_confirmation_of :password
-  validates_presences_of :password :on => :create
-  validates_presences_of :email
-  validates_uniqueness_of :email
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
+
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
+  validates :email, :presence => true, uniqueness: true
+  validates :password, :presence => true, :on => :create
+
 end
