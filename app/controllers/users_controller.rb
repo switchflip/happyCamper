@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       auto_login(@user)
+      UserMailer.welcome_email(@user).deliver
       redirect_to root_path, :notice =>"Account created!"
     else
       render :new
