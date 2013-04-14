@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     else
       flash.now.alert = "Email or password were invalid."
       render :new
+    end
   end
 
   def destroy
