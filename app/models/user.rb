@@ -3,9 +3,8 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
 
   has_many :items
-  has_many :trips
-  has_many :trip_users through: :user_trips
-
+  has_many :trip_users
+  has_many :trips, through: :trip_users
   
   validates :first_name, :presence => true
   validates :last_name, :presence => true
