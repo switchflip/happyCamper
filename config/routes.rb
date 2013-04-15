@@ -1,20 +1,16 @@
 HappyCamper::Application.routes.draw do
-  get "trips/index"
-
-  get "trips/new"
-
-  get "trips/edit"
-
-  get "trips/destroy"
-
-  get "home/index"
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login"  => "sessions#new",     :as => "login"
   get "signup" => "users#new",        :as => "signup"
   get "account" => "users#edit",      :as => "account"
 
-  resources :users
-  resources :sessions
+  namespace :my do
+    resources :trips
+  end
+
+  resources :users, except: [:index]
+  resources :sessions, :only => [:new, :create, :destroy]
+
   root :to => "home#index"
 end
