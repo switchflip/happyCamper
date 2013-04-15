@@ -1,2 +1,29 @@
-<h1>My::Trips#new</h1>
-<p>Find me in app/views/my/trips/new.html.erb</p>
+<div class="well">
+  <h2>Create a New Trip</h2>  
+</div>
+
+<%= form_for [:my, @trip] do |f| %>
+
+    <% if @trip.errors.any? %>
+    <div class="error_messages"%>
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @trip.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <%end %>
+  
+  <%= render f %>
+
+  <%= f.submit "Create Trip", class: "btn btn-primary" %>
+
+<% end %>
+
+<div>
+  <%= link_to "Back to Dashboard", my_trips_path, :class => "btn btn-primary" %>
+</div>
+
+
+

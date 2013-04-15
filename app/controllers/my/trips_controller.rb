@@ -3,7 +3,9 @@ class My::TripsController < ApplicationController
   before_filter :require_login
 
   def index
-    @trips = current_user.trips.order('trips.created_at DESC').all
+    @user = current_user
+    @trips = current_user.trips.all
+    #raise Trip.all.inspect
   end
 
   def new
@@ -11,7 +13,8 @@ class My::TripsController < ApplicationController
   end
 
   def create
-    @trip = current_user.trips.build params[:trip]
+    @trip = Trip.new params[:trip]
+    @trip.users << current_user
     if @trip.save
       redirect_to my_trips_path, notice: "Trip created!"
     else
