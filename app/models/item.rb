@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
-  belongs_to :user
   attr_accessible :name, :quanity
+
+  belongs_to :user
 end
