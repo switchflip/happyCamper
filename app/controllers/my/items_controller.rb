@@ -11,12 +11,11 @@ class My::ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(params[:id])
-    @item.users << current_user
-    if @trip.save
-      rediect_to_items_path, notice: "Item created!"
+    @item = current_user.items.new(params[:item])
+    if @item.save
+      redirect_to my_items_path, notice: "Item created!"
     else
-      else render :new
+      render :new
     end
   end
 
@@ -30,8 +29,8 @@ class My::ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    if item.update_attributes(params[:item])
-      redirect_to_my_items_path, notice: "Item successfully updated!"
+    if @item.update_attributes(params[:item])
+      redirect_to my_items_path, notice: "Item successfully updated!"
     else
       render :new
     end
@@ -40,6 +39,6 @@ class My::ItemsController < ApplicationController
   def destroy
     @item = Trip.find(params[:id])
     @item.destroy
-    rediect_to_items_path, notice: "Item remove from inventory!"
+    rediect_to items_path, notice: "Item remove from inventory!"
   end
 end
