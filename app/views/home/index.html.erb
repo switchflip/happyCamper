@@ -2,9 +2,9 @@
   <h1>HappyCamper</h1>
   <br/>
   <% if logged_in? %>
-    <%= link_to "Dashboard", my_trips_path, :class => "btn btn-primary btn-large" %>
+    <p>Welcome back...</p>
   <% else %>
-    <%= link_to "Get Started!", signup_path, :class => "btn btn-primary btn-large" %>
+    <%= link_to "Sign-up", signup_path, :class => "btn btn-primary btn-large" %>
   <% end %>
 </div>
 <div class="row">

@@ -16,14 +16,28 @@
       <nav class="navbar-inner">
         <div class="container">
           <ul class="nav">
-            <li><%= link_to "Home", root_path %></li>
+            <li class="<%= 'active' if params[:controller] == 'home' %>">
+              <%= link_to "Home", root_path %>
+            </li>
             
             <% if logged_in? %>
-              <li><%= link_to "Edit", account_path %></li>
+              <li class="<%= 'active' if params[:controller] == 'users'%>">
+                <%= link_to "Edit", account_path %>
+              </li>
               <li><%= link_to "Logout", logout_path %></li>
+              <li class="<%= 'active' if params[:controller] == 'my/trips' %>">
+                <%= link_to "Trips", my_trips_path %>
+              </li>
+              <li class ="<%= 'active' if params[:controller] == 'my/items'%>">
+                <%= link_to "Items", my_items_path %>
+              </li>
             <% else %>
-              <li><%= link_to "Sign-up", signup_path %></li>
-              <li><%= link_to "Login", new_session_path %></li>
+              <li class="<%= 'active' if params[:controller] == 'users' %>">
+                <%= link_to "Sign-up", signup_path %>
+              </li>
+              <li class="<%= 'active' if params[:controller] == 'sessions' %>">
+                <%= link_to "Login", new_session_path %>
+              </li>
             <% end %>
           </ul>
         </div>

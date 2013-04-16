@@ -19,10 +19,6 @@ class My::ItemsController < ApplicationController
     end
   end
 
-  def show
-    @item = Item.find(params[:id])
-  end
-
   def edit
     @item = Item.find(params[:id])
   end
@@ -37,8 +33,8 @@ class My::ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Trip.find(params[:id])
+    @item = Item.find(params[:id])
     @item.destroy
-    rediect_to items_path, notice: "Item remove from inventory!"
+    redirect_to my_items_path, notice: "Item remove from inventory!"
   end
 end
