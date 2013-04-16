@@ -1,0 +1,10 @@
+<div class="well">
+  <h2><%= @trip.title %></h2>  
+</div>
+
+<p><%= @trip.description %></p>
+<p>Starting on <%= @trip.start_date %> and ending on <%= @trip.end_date %></p>
+
+<div>
+  <%= link_to "Back to Dashboard", my_trips_path, :class => "btn btn-primary" %>
+</div>

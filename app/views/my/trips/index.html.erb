@@ -1,7 +1,8 @@
-<h1>My Trips</h1>
+<div class="well">
+  <h1><%= @user.first_name %>'s Trips</h1>
+</div>
 
 <table>
-
   <tr>
     <th>Name</th>
     <th>Description</th>
@@ -9,11 +10,8 @@
     <th>End Date</th>
     <th>Edit</th>
     <th>Delete</th>
+    <th>View</th>
   </tr>
-
-  <%= @user %> <br/>
-  <%= @user.first_name %> <br/>
-  <%= @user.trips.inspect %>
 
   <% @user.trips.each do |trip| %>
     <tr>
@@ -21,14 +19,15 @@
       <td><%= trip.description %></td>
       <td><%= trip.start_date %></td>
       <td><%= trip.end_date %></td>
+      <td><%= link_to "Edit", edit_my_trip_path(trip)%></td>
+      <td><%= link_to "Delete", my_trip_path(trip), method: :delete, data: {confirm: 'Are you sure?'}%></td>
+      <td><%= link_to "View", my_trip_path(trip) %></td>
     </tr>
   <% end %>
-
 </table>
 
-<div>
+<hr>
+
+<div class="pull-left">
   <%= link_to "New Trip!", new_my_trip_path, :class => "btn btn-primary" %>
 </div>
-
-
-

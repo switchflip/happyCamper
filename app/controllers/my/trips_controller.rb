@@ -1,11 +1,13 @@
-class My::TripsController < ApplicationController
-  
+class My::TripsController < ApplicationController  
   before_filter :require_login
 
   def index
     @user = current_user
     @trips = current_user.trips.all
-    #raise Trip.all.inspect
+  end
+
+  def show
+    @trip = Trip.find(params[:id])
   end
 
   def new
@@ -23,10 +25,12 @@ class My::TripsController < ApplicationController
   end
 
   def edit
+    @trip = Trip.find(params[:id])
   end
 
   def update
-    if @trip.update_attributes params[:trip]
+    @trip = Trip.find(params[:id])
+    if @trip.update_attributes(params[:trip])
       redirect_to my_trips_path, notice: "Trip successfully updated!"
     else
       render :new
@@ -34,6 +38,7 @@ class My::TripsController < ApplicationController
   end
 
   def destroy
+    @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to my_trips_path, notice: "Trip deleted."
   end
