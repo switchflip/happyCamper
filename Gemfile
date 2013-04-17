@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'possessive'
+gem 'date_validator'
 
 
 # Gems used only for assets and not required

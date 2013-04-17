@@ -44,6 +44,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    date_validator (0.6.4)
+      activemodel (>= 3)
     diff-lcs (1.2.3)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -149,6 +151,7 @@ DEPENDENCIES
   better_errors
   bootstrap-sass (~> 2.2.2.0)
   coffee-rails (~> 3.2.1)
+  date_validator
   factory_girl_rails
   jquery-rails
   possessive
