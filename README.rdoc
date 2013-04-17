@@ -1,5 +1,15 @@
 == Welcome to HappyCamper
 
-HappyCamper is an app who's purpose is to help take the pain away from planning 
-and organizing a camping trip with multiple people
+HappyCamper is an app who's purpose is to help take the pain away from planning and organizing a camping trip with multiple people.
 
+Currently, the functionality is quite basic (its my first app!). But, check back because I am constantly making changes.
+
+Gems
+----
+
+- sorcery
+- factoryGirl
+- rspec
+- possessive
+- jquery-rails
+- better-errors
