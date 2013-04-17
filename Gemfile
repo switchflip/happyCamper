@@ -27,9 +27,11 @@ gem 'sorcery'
 
 group :development do
   gem 'better_errors'
+  gem 'rspec-rails'
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
 
