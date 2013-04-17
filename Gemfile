@@ -26,18 +26,18 @@ end
 gem 'jquery-rails'
 gem 'sorcery'
 
-group :development do
-  gem 'better_errors'
-  gem 'rspec-rails'
-end
-
 group :tools do
   gem 'guard-test'
   gem 'guard-livereload'  
 end
 
+group :development do
+  gem 'better_errors'
+end
+
+gem 'rspec-rails', :group => [:test, :development]
+
 group :test do
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
 
