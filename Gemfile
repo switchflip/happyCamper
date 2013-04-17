@@ -6,7 +6,6 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
 gem 'possessive'
 
 
@@ -28,6 +27,10 @@ gem 'sorcery'
 
 group :development do
   gem 'better_errors'
+end
+
+group :test do
+  gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password
