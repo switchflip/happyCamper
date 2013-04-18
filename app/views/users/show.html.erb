@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h1><%= current_user.first_name.possessive %> dashboard</h1>
+      <p>Manage your trips or add iems to your gear inventory.</p>
+    </div>
+  </div>
+
+  <hr>
+  
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <div class="span6">
+      <h4>Trips</h4>
+      <p>You currently have <%= current_user.trips.count %> trips.</p>
+      <div>
+        <%= link_to "View Trips", my_trips_path, :class => "btn btn-primary" %>
+      </div>
+    </div>
+
+    <div class="span6">
+      <h4>Inventory</h4>
+      <p>You currently have <%= current_user.items.count %> items in your inventory.</p>
+      <div>
+        <%= link_to "View Inventory", my_items_path, :class => "btn btn-primary" %>
+      </div>
+    </div>
+  </div> <!-- end .row -->
+</div> <!-- end .container  -->
+

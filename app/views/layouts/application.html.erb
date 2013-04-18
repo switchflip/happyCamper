@@ -16,21 +16,16 @@
       <nav class="navbar-inner">
         <div class="container">
           <ul class="nav">
-            <li class="<%= 'active' if params[:controller] == 'home' %>">
+            <li class="<%= 'active' if @home_nav %>">
               <%= link_to "Home", root_path %>
             </li>
             
             <% if logged_in? %>
-              <li class="<%= 'active' if params[:controller] == 'users'%>">
-                <%= link_to "Edit", account_path %>
+              <li class=" pull-right <%= 'active' if @edit_nav %>">
+                <%= link_to "Account", account_path %>
               </li>
               <li><%= link_to "Logout", logout_path %></li>
-              <li class="<%= 'active' if params[:controller] == 'my/trips' %>">
-                <%= link_to "Trips", my_trips_path %>
-              </li>
-              <li class ="<%= 'active' if params[:controller] == 'my/items'%>">
-                <%= link_to "Items", my_items_path %>
-              </li>
+  
             <% else %>
               <li class="<%= 'active' if params[:controller] == 'users' %>">
                 <%= link_to "Sign-up", signup_path %>
@@ -43,14 +38,28 @@
         </div>
       </nav>
     </header>
+
     <div id="main" role="main">
       <div class="container">
         <!-- <div class="content"> -->
            <div class="row">
+            
+            <div class="span12">
+                <% if flash[:notice] %>
+                  <div class="alert alert-success">
+                    <%= flash[:notice] %>
+                  </div>
+                <% elsif flash[:alert] %>
+                  <div class="alert alert-error">
+                    <%= flash[:alert] %>
+                  </div>
+                <% end %>
+            </div>
+
             <div class="span12">
               <%= yield %>
-            </div>
-          </div>
+            </div> <!-- end .span12 -->
+          </div>  <!-- end .row -->
           <footer>
           </footer>
         <!-- </div> end .content -->

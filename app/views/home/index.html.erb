@@ -1,12 +1,7 @@
 <div class="hero-unit">
   <h1>HappyCamper</h1>
-  <% if logged_in? %>
-    <br/>
-    <p>Welcome back, <%= current_user.first_name %>!</p>
-  <% else %>
     <br/>
     <%= link_to "Sign-up", signup_path, :class => "btn btn-primary btn-large" %>
-  <% end %>
 </div>
 <div class="row">
   <div class="span4">

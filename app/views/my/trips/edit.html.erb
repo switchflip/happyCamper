@@ -1,4 +1,4 @@
-<h1>Edit An Existing Trip</h1>
+<h1>Edit Trip</h1>
 <hr>
 
 <%= form_for [:my, @trip] do |f| %>
@@ -21,6 +21,6 @@
 <% end %>
 
 <div>
-  <%= link_to "Back to Dashboard", my_trips_path, :class => "btn btn-primary" %>
+  <%= link_to "Back", my_trips_path, :class => "btn btn-primary" %>
 </div>
 

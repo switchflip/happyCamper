@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @signup_nav = true
     @user = User.new
   end
 
@@ -8,13 +9,18 @@ class UsersController < ApplicationController
     if @user.save
       auto_login(@user)
       UserMailer.welcome_email(@user).deliver
-      redirect_to root_path, :notice =>"Account created!"
+      redirect_to user_path, :notice =>"Account created!"
     else
       render :new
     end
   end
 
+  def show
+    @home_nav = true    
+  end
+
   def edit
+    @edit_nav = true
     @user = current_user
   end
 
