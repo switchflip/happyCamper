@@ -6,9 +6,9 @@
 </div>
 <div>
   <p>Start Date</p>
-  <%= form.date_select :start_date, placeholder: "YY/MM/DD" %>
+  <%= form.text_field :start_date, placeholder: "YY/MM/DD", :class => "calendar" %>
 </div>
 <div>
   <p>End Date</p>
-  <%= form.date_select :end_date, placeholder: "YY/MM/DD" %>
+  <%= form.text_field :end_date, placeholder: "YY/MM/DD", :class => "calendar" %>
 </div>

@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.ui.all
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
@@ -18,3 +19,9 @@
 jQuery.expr[':'].Contains = function(a,i,m){
   return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
 };
+
+$("document").ready(function(){
+  $('.calendar').datepicker({
+    dateFormat: "yy-mm-dd"
+  }); 
+});
