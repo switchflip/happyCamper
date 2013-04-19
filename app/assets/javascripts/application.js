@@ -31,6 +31,6 @@ $("document").ready(function(){
   //   }, 3000);
   // });
 
-  $('.flash-notice').delay(3000).slideToggle('fast');
+  $('.flash-notice').delay(1000).slideToggle('fast');
 
 });
