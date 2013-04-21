@@ -1,5 +1,5 @@
 class TripUser < ActiveRecord::Base
-  attr_accessible :trip_id, :user_id
+  attr_accessible :trip_id, :user_id, :organizer
 
   STATUS = [
     :invited   => 'Invited',
@@ -10,5 +10,4 @@ class TripUser < ActiveRecord::Base
   belongs_to :user
   belongs_to :trip
 
-  
 end
