@@ -14,3 +14,6 @@ Gems
 - possessive
 - jquery-rails
 - better-errors
+- date_validator
+- guard
+- guard livereload
