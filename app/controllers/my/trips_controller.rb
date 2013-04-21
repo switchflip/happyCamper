@@ -17,6 +17,7 @@ class My::TripsController < ApplicationController
   def create
     @trip = Trip.new params[:trip]
     @trip.users << current_user
+    @trip.user_id = current_user.id
     if @trip.save
       redirect_to my_trips_path, notice: "Trip created!"
     else

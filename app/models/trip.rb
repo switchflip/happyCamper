@@ -8,4 +8,10 @@ class Trip < ActiveRecord::Base
   validates :description, :presence => true
   validates :start_date, :date => {:before => :end_date}
   validates :end_date, :date => {:after => :start_date}
+
+
+  def organizers
+    self.users.where(:id => self.user_id)
+  end
+
 end
