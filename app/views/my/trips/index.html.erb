@@ -24,7 +24,11 @@
       <td class="name"><%= trip.title %></td>
       <td>
         <%= trip.description %>
-        <p><%= trip.users.count %> people on this trip</p>
+        <% if trip.users.count > 1 %>
+            <p>There are <%= trip.users.count%> people on this trip</p>
+          <% else %>
+            <p> There is 1 person on this trip </p>
+        <% end %>
       </td>
       <td><%= trip.start_date %></td>
       <td><%= trip.end_date %></td>
