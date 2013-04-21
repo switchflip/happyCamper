@@ -9,9 +9,11 @@ class Trip < ActiveRecord::Base
   validates :start_date, :date => {:before => :end_date}
   validates :end_date, :date => {:after => :start_date}
 
-
   def organizers
-    self.users.where(:id => self.user_id)
+    # Returns the ids of all users who are organizers for this trip
+    organizer_ids = self.trip_users.where(:organizer => true).pluck(:user_id)
+    # Returns the users who have the ids
+    User.where(:id => organizer_ids)
   end
 
 end
