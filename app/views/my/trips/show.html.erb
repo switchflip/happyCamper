@@ -1,19 +1,39 @@
-<h1><%= @trip.title %></h1>  
-<hr>
+<div class="contrainer">
+  <div class="row">
+    <div class="span9">
+       <h1><%= @trip.title %></h1>  
+       <hr>
+      <p><%= @trip.description %></p>
+    <p>Starting on <%= @trip.start_date %> and ending on <%= @trip.end_date %></p>
+      <% if @trip.users.count > 1 %>
+        <h4>People On This Trip</h4>
+        <ul>
+          <% @trip.users.each do |user| %>
+            <li><%= user.email %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <div>
+        <%= link_to "Back", my_trips_path, :class => "btn btn-primary" %>
+      </div>
+    </div>
 
-<p><%= @trip.description %></p>
-<p>Starting on <%= @trip.start_date %> and ending on <%= @trip.end_date %></p>
+    <div class="span3">
+      <h4>People on this Trip</h4>
+      <ul>
+        <% @trip.users.each do |user| %>
+          <li><%= user.email %></li>
+        <% end %>
+      </ul>
 
-<% if @trip.users.count > 1 %>
-  <h4>People On This Trip</h4>
-  <ul>
-    <% @trip.users.each do |user| %>
-      <li><%= user.email %></li>
-    <% end %>
-  </ul>
-<% end %>
+      <%= form_tag invite_my_trip_path(@trip), :method => :post do %>
+        <%= text_field_tag :email%>
+        <%= submit_tag "Invite", :class => "btn" %>
+      <% end %>
+      
 
 
-<div>
-  <%= link_to "Back", my_trips_path, :class => "btn btn-primary" %>
+
+    </div>
+  </div>
 </div>

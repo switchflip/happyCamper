@@ -8,7 +8,11 @@ HappyCamper::Application.routes.draw do
   get "account" => "users#edit",      :as => "account"
 
   namespace :my do
-    resources :trips
+    resources :trips do
+      member do
+        post "invite"
+      end
+    end
     resources :items
   end
 

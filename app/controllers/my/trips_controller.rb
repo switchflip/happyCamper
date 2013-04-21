@@ -43,4 +43,17 @@ class My::TripsController < ApplicationController
     @trip.destroy
     redirect_to my_trips_path, notice: "Trip deleted."
   end
+
+  # post
+  def invite
+    @user = User.find_by_email(params[:email])
+    if @user.nil?
+      # validate email - look for an email validation gem
+      @user = User.new(:email => params[:email])
+      @user.save(:validate => false)
+    end
+
+    @user = 
+
+  end
 end
