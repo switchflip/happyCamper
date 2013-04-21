@@ -47,13 +47,19 @@ class My::TripsController < ApplicationController
   # post
   def invite
     @user = User.find_by_email(params[:email])
+    @trip = Trip.find(params[:id])
     if @user.nil?
       # validate email - look for an email validation gem
       @user = User.new(:email => params[:email])
+      @user.generate_invite_token
       @user.save(:validate => false)
     end
 
-    @user = 
+    @trip.users << @user
 
+    UserMailer.trip_invitation(@user, current_user, @trip).deliver
+
+    redirect_to my_trip_path(@trip)
   end
+
 end

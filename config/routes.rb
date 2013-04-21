@@ -16,6 +16,8 @@ HappyCamper::Application.routes.draw do
     resources :items
   end
 
+  match "my/trips/:id/invite/:invite_token" => 'my/trips#accept_invite', :as  => 'accept_invite'
+
   resources :users, except: [:index]
   resources :sessions, :only => [:new, :create, :destroy]
 

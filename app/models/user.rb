@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   validates           :password, :presence => true, :on => :create
   validates_length_of :password, minimum: 4, allow_blank: true
 
+  def generate_invite_token
+    self.invite_token = SecureRandom.urlsafe_base64
+  end
+
 end
