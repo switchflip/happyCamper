@@ -4,6 +4,16 @@
 <p><%= @trip.description %></p>
 <p>Starting on <%= @trip.start_date %> and ending on <%= @trip.end_date %></p>
 
+<% if @trip.users.count > 1 %>
+  <h4>People On This Trip</h4>
+  <ul>
+    <% @trip.users.each do |user| %>
+      <li><%= user.email %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
 <div>
   <%= link_to "Back", my_trips_path, :class => "btn btn-primary" %>
 </div>

@@ -22,7 +22,10 @@
   <% @user.trips.each do |trip| %>
     <tr>
       <td class="name"><%= trip.title %></td>
-      <td><%= trip.description %></td>
+      <td>
+        <%= trip.description %>
+        <p><%= trip.users.count %> people on this trip</p>
+      </td>
       <td><%= trip.start_date %></td>
       <td><%= trip.end_date %></td>
       <td><%= link_to "Edit", edit_my_trip_path(trip)%></td>

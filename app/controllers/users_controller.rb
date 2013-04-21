@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @home_nav = true    
+    @home_nav = true
   end
 
   def edit
