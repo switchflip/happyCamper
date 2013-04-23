@@ -8,6 +8,7 @@ class Trip < ActiveRecord::Base
   validates :description, :presence => true
   validates :start_date, :date => {:before => :end_date}
   validates :end_date, :date => {:after => :start_date}
+  
 
   def organizers
     # Returns the ids of all users who are organizers for this trip

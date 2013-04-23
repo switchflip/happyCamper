@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="span9">
+    <div class="span8">
        <h1><%= @trip.title %></h1>  
        <hr>
+      <h5>Desription</h5>
       <p><%= @trip.description %></p>
-    <p>Starting on <%= @trip.start_date %> and ending on <%= @trip.end_date %></p>
+    <p>Starting on <%= @trip.start_date.strftime('%B %e') %> and ending on <%= @trip.end_date.strftime('%B %e') %>.</p>
       <% if @trip.users.count > 1 %>
         <h4>People On This Trip</h4>
         <ul>
@@ -18,7 +19,7 @@
       </div>
     </div>
 
-    <div class="span3">
+    <div class="span4">
       <h4>People on this Trip</h4>
       <ul>
         <% @trip.users.each do |user| %>
