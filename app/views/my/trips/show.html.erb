@@ -5,7 +5,7 @@
        <hr>
       <h5>Desription</h5>
       <p><%= @trip.description %></p>
-    <p>Starting on <%= @trip.start_date.strftime('%B %e') %> and ending on <%= @trip.end_date.strftime('%B %e') %>.</p>
+    <p>Starts on <%= @trip.start_date.strftime('%B %e') %> and ends on <%= @trip.end_date.strftime('%B %e') %>.</p>
       <% if @trip.users.count > 1 %>
         <h4>People On This Trip</h4>
         <ul>
