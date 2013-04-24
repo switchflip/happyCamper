@@ -1,9 +1,9 @@
 <div class="container">
+  <h1><%= @trip.title %></h1>  
+  <hr>
   <div class="row">
-    <div class="span8">
-       <h1><%= @trip.title %></h1>  
-       <hr>
-      <h5>Desription</h5>
+    <div class="span6">
+      <h5>Trip Details</h5>
       <p><%= @trip.description %></p>
       <h5>Dates</h5>
       <p>Starts <%= @trip.start_date.strftime('%B %e, %Y') %> and ends on <%= @trip.end_date.strftime('%B %e, %Y') %>.</p>
@@ -11,26 +11,44 @@
         <h5>People On This Trip</h5>
         <ul>
           <% @trip.users.each do |user| %>
-            <li><%= user.first_name %> <%= user.last_name%></li>
+            <% if user.first_name == nil %>
+              <li>
+                  <%= user.email %> - 
+                  <em class="text-warning">unverified account</em>
+              </li>
+            <% else %>
+              <li>
+                <%= user.first_name %> <%= user.last_name %> - 
+                <em class="text-success">verified account</em>
+              </li>
+            <% end %>
           <% end %>
         </ul>
       <% end %>
 
-      <div>
-        <%= link_to "Back", my_trips_path, :class => "btn btn-primary" %>
-      </div>
-
     </div> <!-- end .span8 -->
 
-    <div class="span4">
-      <h4>The more the merrier!</h4>
-      <p>Enter the email address of who you would like to invite.</p>
+    <div class="span6">
+      <h5>Invite more friends!</h5>
+      <p>Enter the email address of who you would like to invite. Why? Because the more the merrier!</p>
 
       <%= form_tag invite_my_trip_path(@trip), :method => :post do %>
         <%= text_field_tag :email%>
+        <br/>
         <%= submit_tag "Invite!", :class => "btn btn-success" %>
       <% end %>
+    </div> <!-- end .span4 -->
 
+    <div class="span6">
+      <h5>Location</h5>
+      
+      <iframe width="450" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=7816+Fairview+RD.+St.+Thomas,+ON+Canada&amp;ie=UTF8&amp;hq=&amp;hnear=7816+Fairview+Rd,+St+Thomas,+Ontario+N5P+3S8,+Canada&amp;t=m&amp;ll=42.90816,-80.947266&amp;spn=2.816373,4.669189&amp;z=7&amp;iwloc=&amp;output=embed"></iframe>
     </div>
   </div> <!-- end .row -->
+  <hr>
+  <div class="row">
+    <div class="span12">
+      <%= link_to "Back", my_trips_path, :class => "btn btn-primary" %>
+    </div>
+  </div>
 </div> <!-- end .container -->
