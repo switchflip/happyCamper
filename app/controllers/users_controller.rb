@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_login, :except => [:new, :create]
+
+  before_filter :require_login, :except => [:new, :create, :invite]
 
   def new
     @signup_nav = true
@@ -35,4 +36,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def invite
+    @user = User.where(:invite_token => params[:invite_token]).first
+    if @user.nil?
+      redirect_to new_user_path, :notice => "Invalid invite token."
+    else
+      # TODO: active user account (https://github.com/NoamB/sorcery - @user.activate!)
+      auto_login(@user)
+      redirect_to edit_user_path(@user), :notice => "Please complete account details."
+    end
+  end
 end

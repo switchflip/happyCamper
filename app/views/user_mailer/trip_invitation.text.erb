@@ -1,2 +1,5 @@
-You've been invited to <%= @trip.title %> by <%= @inviter.email %>.
+Hi <%= @invited_user.email%>,
 
+You've just been invited to <%= @trip.title %> by <%= @inviting_user.first_name %>. To accept and setup your account, please follow the link below:
+
+<%= @invite_url %>

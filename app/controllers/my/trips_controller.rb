@@ -45,6 +45,14 @@ class My::TripsController < ApplicationController
   end
 
   # post
+  # 1. Check if the user already exists
+  # 2. If they DO NOT exist:
+  #      a. create their stub account (don't validate it)
+  #      b. generate an invite token
+  #      c. send an invitation email to the user
+  #      d. add a record to the trip_users table
+  # 3. If they DO exist
+  #      a. add a record to the trip_users table
   def invite
     @user = User.find_by_email(params[:email])
     @trip = Trip.find(params[:id])
@@ -54,11 +62,8 @@ class My::TripsController < ApplicationController
       @user.generate_invite_token
       @user.save(:validate => false)
     end
-
     @trip.users << @user
-
     UserMailer.trip_invitation(@user, current_user, @trip).deliver
-
     redirect_to my_trip_path(@trip)
   end
 
