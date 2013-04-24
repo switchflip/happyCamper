@@ -21,6 +21,7 @@ jQuery.expr[':'].Contains = function(a,i,m){
 };
 
 $("document").ready(function(){
+  
   $('.calendar').datepicker({
     dateFormat: "yy-mm-dd"
   });
@@ -31,6 +32,6 @@ $("document").ready(function(){
   //   }, 3000);
   // });
 
-  $('.flash-notice').delay(1000).slideToggle('fast');
+  $('.flash-notice').delay(1500).slideUp('fast');
 
 });

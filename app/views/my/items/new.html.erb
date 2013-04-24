@@ -1,26 +1,27 @@
 <h1>Add Items</h1>
 <p>Keep updated on what items you have.</p>
 <hr>
+<div class="row">
+  <div class="span12">
+    <%= form_for [:my, @item] do |f| %>
 
-<%= form_for [:my, @item] do |f| %>
+        <% if @item.errors.any? %>
+        <div class="error_messages"%>
+          <h2>Form is invalid</h2>
+          <ul>
+            <% for message in @item.errors.full_messages %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <%end %>
+      
+      <%= render f %>
 
-    <% if @item.errors.any? %>
-    <div class="error_messages"%>
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @item.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <%end %>
-  
-  <%= render f %>
+      <%= f.submit "Add item", class: "btn btn-primary" %>
+      
+      <%= link_to "Back", my_items_path, :class => "btn btn-primary pull-right" %>
+    <% end %>
+  </div> <!-- end span12 -->
+</div> <!-- end row -->
 
-  <%= f.submit "Add item", class: "btn btn-primary" %>
-
-<% end %>
-
-<div>
-  <%= link_to "Back", my_items_path, :class => "btn btn-primary" %>
-</div>

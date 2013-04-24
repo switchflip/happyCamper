@@ -5,36 +5,32 @@
        <hr>
       <h5>Desription</h5>
       <p><%= @trip.description %></p>
-    <p>Starts on <%= @trip.start_date.strftime('%B %e') %> and ends on <%= @trip.end_date.strftime('%B %e') %>.</p>
+      <h5>Dates</h5>
+      <p>Starts <%= @trip.start_date.strftime('%B %e, %Y') %> and ends on <%= @trip.end_date.strftime('%B %e, %Y') %>.</p>
       <% if @trip.users.count > 1 %>
-        <h4>People On This Trip</h4>
+        <h5>People On This Trip</h5>
         <ul>
           <% @trip.users.each do |user| %>
-            <li><%= user.email %></li>
+            <li><%= user.first_name %> <%= user.last_name%></li>
           <% end %>
         </ul>
       <% end %>
+
       <div>
         <%= link_to "Back", my_trips_path, :class => "btn btn-primary" %>
       </div>
-    </div>
+
+    </div> <!-- end .span8 -->
 
     <div class="span4">
-      <h4>People on this Trip</h4>
-      <ul>
-        <% @trip.users.each do |user| %>
-          <li><%= user.email %></li>
-        <% end %>
-      </ul>
+      <h4>The more the merrier!</h4>
+      <p>Enter the email address of who you would like to invite.</p>
 
       <%= form_tag invite_my_trip_path(@trip), :method => :post do %>
         <%= text_field_tag :email%>
-        <%= submit_tag "Invite", :class => "btn" %>
+        <%= submit_tag "Invite!", :class => "btn btn-success" %>
       <% end %>
-      
-
-
 
     </div>
-  </div>
-</div>
+  </div> <!-- end .row -->
+</div> <!-- end .container -->
