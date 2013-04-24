@@ -17,10 +17,6 @@
   <%= render f %>
 
   <%= f.submit "Update Trip", class: "btn btn-primary" %>
-
+  <%= link_to "Back", my_trips_path, :class => "btn btn-primary pull-right" %>
 <% end %>
-
-<div>
-  <%= link_to "Back", my_trips_path, :class => "btn btn-primary" %>
-</div>
 
