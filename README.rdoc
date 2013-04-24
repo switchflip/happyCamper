@@ -8,12 +8,14 @@ Currently, a user can create an account, add trips, add gear to their inventory 
 Eventually I would like to encorporate routes, meal planning, and the ability to purchase items from Mountain Equipment 
 Co-op or other gear provides.
 
+Controller test and unit tests have been created using rspec, but more tests need to be added.
 
 ---
 
 Gems
 
 - sorcery
+- bootstrap
 - factoryGirl
 - rspec
 - possessive
