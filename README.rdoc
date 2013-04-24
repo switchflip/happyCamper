@@ -3,9 +3,10 @@
 HappyCamper is an app who's purpose is to help take the pain away from planning and organizing a camping trip with multiple people.
 Currently, the functionality is quite basic (its my first app!).
 
-Currently, a user can create an account, add trips, add gear to their inventory and invite other people to there trip. Eventually
-I would like to encorporate routes, meal planning, and the ability to purchase items from Mountain Equipment Co-op or
-other gear provides.
+Currently, a user can create an account, add trips, add gear to their inventory and invite other people to there trip. 
+
+Eventually I would like to encorporate routes, meal planning, and the ability to purchase items from Mountain Equipment 
+Co-op or other gear provides.
 
 
 ---
