@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'possessive'
 gem 'jquery-ui-rails'
 gem 'date_validator'
+gem 'geocoder'
 
 # Gems used only for assets and not required
 # in production environments by default.
