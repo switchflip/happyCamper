@@ -22,7 +22,7 @@
         <td class="name"><%= trip.title %></td>
         <td>
           <%= trip.description %>
-            <p><%= pluralize(trip.users.count, "person")%> on this trip</p>
+            <p><em class="text-success"><%= pluralize(trip.users.count, "person")%> on this trip</em></p>
         </td>
         <td><%= link_to "View",
                 my_trip_path(trip),
@@ -37,7 +37,7 @@
 <div class="row">
   <div class="span12">
     <%= link_to "New Trip", new_my_trip_path, :class => "btn btn-success" %>
-    <%= link_to "Back", root_path, :class => "btn btn-primary pull-right" %>
+    <%= link_to "Home", root_path, :class => "btn btn-primary pull-right" %>
     <br/>
     <br/>
 </div>

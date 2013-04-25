@@ -26,6 +26,10 @@
         </ul>
       <% end %>
 
+      <div class="inventory">
+        <h5>Group Inventory</h5>
+      </div>
+
     </div> <!-- end .span8 -->
 
     <div class="span6">
@@ -38,27 +42,27 @@
         <%= submit_tag "Invite!", :class => "btn btn-success" %>
       <% end %>
 
-      <h5>Location</h5>
+      <h5>Map</h5>
       
-      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=8&markers=#{@trip.latitude}%2C#{@trip.longitude}" %>
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x400&sensor=false&zoom=10&markers=#{@trip.latitude}%2C#{@trip.longitude}" %>
     </div>
 
 
   </div> <!-- end .row -->
   
-  <hr>
-
   <div class="row">
     <div class="span12">
+      <br/>
+      <br />
       <%= link_to "Back", my_trips_path, :class => "btn btn-primary pull-right" %>
       
-      <%= link_to "Edit",
-          edit_my_trip_path(@trip),
-          :class => "btn btn-success"%>
-
       <%= link_to "Delete",
           my_trip_path(@trip), :class => "btn btn-danger",
           method: :delete, data: {confirm: 'Are you sure?'} %>
+
+      <%= link_to "Edit",
+          edit_my_trip_path(@trip),
+          :class => "btn btn-success"%>
     </div>
   </div>
 </div> <!-- end .container -->
