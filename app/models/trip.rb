@@ -1,5 +1,8 @@
 class Trip < ActiveRecord::Base
   attr_accessible :title, :description, :start_date, :end_date, :location, :longitude, :latitude
+  
+  geocoded_by :location
+  after_validation :geocode
 
   has_many :trip_users
   has_many :users, through: :trip_users
