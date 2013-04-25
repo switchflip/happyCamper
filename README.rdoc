@@ -1,12 +1,10 @@
 == Welcome to HappyCamper
 
-HappyCamper is an app who's purpose is to help take the pain away from planning and organizing a camping trip with multiple people.
-Currently, the functionality is quite basic (its my first app!).
+HappyCamper is an app who's purpose is to help take the pain away from planning and organizing a camping trip. Currently, the functionality is quite basic (its my oroginal first app!).
 
-Currently, a user can create an account, add trips, add gear to their inventory and invite other people to there trip. 
+If you're interested in trying this out I encourage you to clone the rep and try it out locally. Currently I'm using SQLlite. So it will not work on a server. So far, a user can create an account, add trips, add gear to their inventory and invite other people to there trip. 
 
-Eventually I would like to encorporate routes, meal planning, and the ability to purchase items from Mountain Equipment 
-Co-op or other gear provides.
+Eventually I would like to encorporate routes, meal planning, weather and the ability to purchase items from Mountain Equipment Co-op, Canadian Tire or other gear provides.
 
 Controller test and unit tests have been created using rspec, but more tests need to be added.
 
@@ -24,3 +22,4 @@ Gems
 - date_validator
 - guard
 - guard livereload
+- geocoder
