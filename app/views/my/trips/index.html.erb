@@ -14,11 +14,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Start Date</th>
-      <th>End Date</th>
       <th>View</th>
-      <th>Edit</th>
-      <th>Delete</th>
     </tr>
 
     <% @user.trips.each do |trip| %>
@@ -28,21 +24,9 @@
           <%= trip.description %>
             <p><%= pluralize(trip.users.count, "person")%> on this trip</p>
         </td>
-        <td><%= trip.start_date %></td>
-        <td><%= trip.end_date %></td>
         <td><%= link_to "View",
                 my_trip_path(trip),
                 :class => "btn btn-primary" %>
-        </td>
-        <td>
-          <%= link_to "Edit",
-          edit_my_trip_path(trip),
-          :class => "btn btn-success"%>
-        </td>
-        <td>
-            <%= link_to "Delete",
-            my_trip_path(trip), :class => "btn btn-danger",
-            method: :delete, data: {confirm: 'Are you sure?'} %>
         </td>
       </tr>
     <% end %>

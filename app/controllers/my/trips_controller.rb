@@ -32,7 +32,7 @@ class My::TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     if @trip.update_attributes(params[:trip])
-      redirect_to my_trips_path, notice: "Trip successfully updated!"
+      redirect_to my_trip_path, notice: "Trip successfully updated!"
     else
       render :new
     end
