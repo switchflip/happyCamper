@@ -9,6 +9,7 @@ class Trip < ActiveRecord::Base
   validates :start_date, :date => {:before => :end_date}
   validates :end_date, :date => {:after => :start_date}
   validates :location, :presence => true
+  validates_format_of :location, :with => /^([a-z]|[A-Z])/
   
 
   def organizers
