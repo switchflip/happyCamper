@@ -1,5 +1,5 @@
 class Trip < ActiveRecord::Base
-  attr_accessible :title, :description, :start_date, :end_date, :location
+  attr_accessible :title, :description, :start_date, :end_date, :location, :longitude, :latitude
 
   has_many :trip_users
   has_many :users, through: :trip_users
