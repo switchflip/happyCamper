@@ -4,19 +4,27 @@ class My::ItemsController < ApplicationController
   def index
     @user  = current_user
     @items = current_user.items.all
+    @item = Item.new
   end
 
   def new
+    # find a new way without useing .build
+    # creates a new item saved in memory that isn't saved to the database, will fuck up a lot of shit.
     @item = current_user.items.build
   end
 
   def create
     @item = current_user.items.new(params[:item])
     if @item.save
-      redirect_to my_items_path, notice: "Item created!"
+      render @item
     else
-      render :new
+      raise 500
     end
+    # if @item.save
+    #   redirect_to my_items_path, notice: "Item created!"
+    # else
+    #   render :new
+    # end
   end
 
   def edit

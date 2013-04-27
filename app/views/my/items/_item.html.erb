@@ -1,0 +1,15 @@
+<tr>
+    <td class="name"><%= item.name %></td> 
+    <td><%= item.quanity %></td>
+    <td><%= link_to "Edit",
+            # "items/#{item.id}/edit",
+            edit_my_item_path(item),
+            # link_to "Edit", 
+            :class => "btn" %>
+    </td>
+    <td><%= link_to "Delete",
+            my_item_path(item),
+             :class => "btn",
+             method: :delete, data: {confirm: 'Are you sure?'}%>
+    </td>
+</tr>

@@ -26,12 +26,28 @@ $("document").ready(function(){
     dateFormat: "yy-mm-dd"
   });
 
-  // $(".flash-notice").slideDown(function() {
-  //   setTimeout(function() {
-  //       $(".flash-notice").slideUp();
-  //   }, 3000);
-  // });
-
   $('.flash-notice').delay(1500).slideUp('fast');
+
+  $('#new_item_btn').on('click', function(){
+    $('div.hide').slideToggle('fast');
+  })
+
+  // $("").on("ajax:success", function(e, data) { console.log(data + new Date()); });
+
+  // $("#new_item").on("ajax:success", function(e, data) { $('tr:last').append(data); });
+  $("#new_item").on("ajax:success", function(e, data) { 
+    $data = $(data).addClass('hide');
+    //
+    $('#items-table tbody').prepend($data);
+    $data.slideUp();
+
+    // clear your form
+
+    // close the form
+  });
+
+
+
+
 
 });
