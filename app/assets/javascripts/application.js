@@ -32,17 +32,16 @@ $("document").ready(function(){
     $('div.hide').slideToggle('fast');
   })
 
-  // $("").on("ajax:success", function(e, data) { console.log(data + new Date()); });
-
-  // $("#new_item").on("ajax:success", function(e, data) { $('tr:last').append(data); });
   $("#new_item").on("ajax:success", function(e, data) { 
+    // Must create the item and hide it before it slides up
     $data = $(data).addClass('hide');
-    //
+    // 
+    console.log($('#items-table tbody').length);
     $('#items-table tbody').prepend($data);
-    $data.slideUp();
+    $data.slideDown();
 
     // clear your form
-
+    $('#new_item')[0].reset();
     // close the form
   });
 
