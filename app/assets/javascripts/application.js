@@ -36,13 +36,14 @@ $("document").ready(function(){
     // Must create the item and hide it before it slides up
     $data = $(data).addClass('hide');
     // 
-    console.log($('#items-table tbody').length);
     $('#items-table tbody').prepend($data);
-    $data.slideDown();
+    $data.slideDown('slow');
 
     // clear your form
-    $('#new_item')[0].reset();
-    // close the form
+
+    $(':input', '#new_item')
+      .not(':submit')
+      .val('');
   });
 
 
