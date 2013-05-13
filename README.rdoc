@@ -1,5 +1,4 @@
-== Welcome to HappyCamper
-
+=== Welcome to HappyCamper
 ==== Developed by Thomas Berry in Toronto, Canada
 
 HappyCamper is an app who's purpose is to help take the pain away from planning and organizing a camping trip. Currently, the functionality is quite basic (its my oroginal first app!).
