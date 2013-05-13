@@ -1,5 +1,7 @@
 == Welcome to HappyCamper
 
+== Developed by Thomas Berry
+
 HappyCamper is an app who's purpose is to help take the pain away from planning and organizing a camping trip. Currently, the functionality is quite basic (its my oroginal first app!).
 
 If you're interested in trying this out I encourage you to clone the rep and try it out locally. Currently I'm using SQLlite. So it will not work on a server. So far, a user can create an account, add trips, add gear to their inventory and invite other people to there trip. 
