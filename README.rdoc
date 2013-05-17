@@ -1,4 +1,10 @@
-== Welcome to HappyCamper
+  ___ ___                              _________     _____      _____ _______________________________ 
+ /   |   \_____  ______ ______ ___.__. \_   ___ \   /  _  \    /     \\______   \_   _____/\______   \
+/    ~    \__  \ \____ \\____ <   |  | /    \  \/  /  /_\  \  /  \ /  \|     ___/|    __)_  |       _/
+\    Y    // __ \|  |_> >  |_> >___  | \     \____/    |    \/    Y    \    |    |        \ |    |   \
+ \___|_  /(____  /   __/|   __// ____|  \______  /\____|__  /\____|__  /____|   /_______  / |____|_  /
+       \/      \/|__|   |__|   \/              \/         \/         \/                 \/         \/ 
+
 ==== Developed by Thomas Berry in Toronto, Canada
 
 HappyCamper is an app who's purpose is to help take the pain away from planning and organizing a camping trip. Currently, the functionality is quite basic (its my oroginal first app!).
