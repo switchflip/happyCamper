@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates           :email, :presence => true, uniqueness: true
   validates_format_of :email, :with => /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i
   validates           :password, :presence => true, :on => :create
-  validates_length_of :password, minimum: 4, allow_blank: true
+  validates_length_of :password, minimum: 5, allow_blank: true
 
   def generate_invite_token
     self.invite_token = SecureRandom.urlsafe_base64
