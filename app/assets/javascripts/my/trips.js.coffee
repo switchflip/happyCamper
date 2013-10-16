@@ -14,15 +14,4 @@ $(document).ready =>
             $('.table').find("tr .name:not(:Contains(" + filter + "))").parent().hide()
             $('.table').find("tr .name:Contains(" + filter + ")").parent().show()
         return
-
-    # #sort function
-    # sort = () ->
-    #     list = $('.table')
-    #     guests = $(list).find('tr')
-    #     guests.sort (a,b) ->
-    #         return $(a).attr('data-name').toUpperCase().localeCompare($(b).attr('data-name').toUpperCase());
-    #     $.each guests, (index, guest) ->
-    #         $(list).append guest
-    #         return
-    #     return
 return
