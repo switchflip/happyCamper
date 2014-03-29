@@ -1,5 +1,6 @@
 ==HappyCamper
 
+I will not be supporting this build of happyCamper any long. I will be moving onto a new platform - Meteor.js.
 
 ==== Developed by Thomas Berry in Toronto, Canada
 
